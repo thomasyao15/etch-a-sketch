@@ -26,6 +26,10 @@ function addEventListeners() {
 }
 
 function fillSquareColour(e) {
+    if (mouseDown == 0) {
+        return;  // Dont fill if mouse is not down
+    }
+
     e.target.classList.add("filled");
 
     if (rainbowEnabled) {
@@ -56,16 +60,9 @@ function modifyGridSize() {
 // Set initial grid size
 generateGrid(4);
 let rainbowEnabled = false;
-// let mouseDown = 0;
 
-// document.body.onmousedown = function() { 
-//   ++mouseDown;
-//   console.log(mouseDown);
-// }
-// document.body.onmouseup = function() {
-//   --mouseDown;
-//   console.log(mouseUp);
-// }
+
+
 
 
 const modButton = document.getElementById("modify-size");
@@ -76,4 +73,16 @@ rainbowButton.addEventListener("click", () => {
     rainbowEnabled = !rainbowEnabled;
 })
 
+
+
+// Check if mouse is down - 0 = not down, 1 = down at that instance
+let mouseDown = 0;
+
+const body = document.body;
+body.addEventListener('mousedown', () => {
+    ++mouseDown;
+})
+body.addEventListener('mouseup', () => {
+    --mouseDown;
+})
 
