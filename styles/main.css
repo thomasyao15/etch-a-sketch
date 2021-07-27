@@ -11,6 +11,11 @@
     margin-bottom: 50px;
 }
 
+button {
+    padding: 10px 30px;
+    margin: 0 5px;
+}
+
 #grid {
     width: min(70vw, 70vh);
     height: min(70vw, 70vh);
