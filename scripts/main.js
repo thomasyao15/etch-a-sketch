@@ -26,9 +26,9 @@ function addEventListeners() {
 }
 
 function fillSquareColour(e) {
-    if (mouseDown == 0) {
-        return;  // Dont fill if mouse is not down
-    }
+    // if (mouseDown == 0) {
+    //     return;  // Dont fill if mouse is not down
+    // }
 
     e.target.classList.add("filled");
 
@@ -76,13 +76,13 @@ rainbowButton.addEventListener("click", () => {
 
 
 // Check if mouse is down - 0 = not down, 1 = down at that instance
-let mouseDown = 0;
+// let mouseDown = 0;
 
-const body = document.body;
-body.addEventListener('mousedown', () => {
-    ++mouseDown;
-})
-body.addEventListener('mouseup', () => {
-    --mouseDown;
-})
+// const body = document.body;
+// body.addEventListener('mousedown', () => {
+//     ++mouseDown;
+// })
+// body.addEventListener('mouseup', () => {
+//     --mouseDown;
+// })
 
